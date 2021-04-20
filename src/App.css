@@ -1,0 +1,15 @@
+.container{
+    width:400px;
+    margin:1em auto;
+    display: block;
+    background:#ececec;
+    
+
+}
+.container h2{
+    margin: 0px 0px;
+}
+.history p{
+    display: flex;
+    justify-content: space-between;
+}

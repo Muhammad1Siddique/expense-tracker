@@ -1,0 +1,49 @@
+import React from 'react'
+
+const Front =() =>{
+
+    return( 
+        <div className="container w3-round">
+            <h2 className="w3-center w3-padding-16"><strong>Expense Tracker</strong></h2>
+            <div className="w3-container">
+                <p>
+                    <strong>YOUR BALANCE</strong>
+                    <h2><strong>$450.00</strong></h2>
+                </p>
+            </div>
+            <div className="w3-container">
+                <div className="w3-row w3-card-2 w3-white">
+                    <div className="w3-half">
+                        <h4 className="w3-center"><strong>INCOME</strong><br/><span className="w3-text-green">$600.00</span></h4>
+                    </div>
+                    <div className="w3-half">
+                        <h4 className="w3-center"><strong>EXPENSE</strong><br/><span className="w3-text-red">$150.00</span></h4>
+                    </div>
+                </div>
+            </div>  
+            <div className="w3-container history">
+                <h4 className="w3-border-bottom">History</h4>
+                <div className="w3-panel w3-rightbar w3-border-green w3-pale-green w3-card-2">
+                    <p><span>Cash</span><span>+500</span></p>
+                </div>
+                <div className="w3-panel w3-rightbar w3-border-red w3-pale-red w3-card-2">
+                    <p><span>Book</span><span>-200</span></p>
+                </div>
+            </div>
+            <div className="w3-container">
+                <h4 className="w3-border-bottom">Add New Transactions</h4>
+                  <form >
+                    <p><label>Description</label>
+                    <input className="w3-input w3-border" name="desc" type="text" required/>
+                    </p>
+                    <p><label>Amount<br/><small>negative for expense, positive for income</small></label>
+                    <input className="w3-input w3-border" name="price" type="number" required/></p>
+                    <p>
+                    <input className="w3-purple w3-button w3-border" name="submit" type="submit" value="Add Transaction"/></p>
+                  </form>
+            </div>
+        </div>
+    )
+} 
+
+export default Front;            
