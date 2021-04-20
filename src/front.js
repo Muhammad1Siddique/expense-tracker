@@ -1,7 +1,11 @@
 import React from 'react'
 
 const Front =() =>{
-
+    let transactions = [
+        {desc: "Cash",   amount: +500},
+        {desc: "Book",   amount: -200}, 
+        {desc: "Camera", amount: -100}
+    ]
     return( 
         <div className="container w3-round">
             <h2 className="w3-center w3-padding-16"><strong>Expense Tracker</strong></h2>
@@ -23,12 +27,22 @@ const Front =() =>{
             </div>  
             <div className="w3-container history">
                 <h4 className="w3-border-bottom">History</h4>
-                <div className="w3-panel w3-rightbar w3-border-green w3-pale-green w3-card-2">
-                    <p><span>Cash</span><span>+500</span></p>
-                </div>
-                <div className="w3-panel w3-rightbar w3-border-red w3-pale-red w3-card-2">
-                    <p><span>Book</span><span>-200</span></p>
-                </div>
+
+                {transactions.map((transobj, ind)=>{
+                    let chec;
+                    if(Number(transobj.amount)>0){
+                         chec = true;
+                    }else{
+                         chec = false;
+                    }
+                    return(
+                        <div className={`w3-panel w3-rightbar w3-card-2 ${chec ? 'w3-border-green w3-pale-green':'w3-border-red w3-pale-red'}`}>
+                            <p><span>{transobj.desc}</span><span>{transobj.amount}</span></p>
+                        </div>
+                    )
+                })}
+                
+                
             </div>
             <div className="w3-container">
                 <h4 className="w3-border-bottom">Add New Transactions</h4>
