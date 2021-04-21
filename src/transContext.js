@@ -2,10 +2,9 @@ import React, {createContext, useReducer} from 'react'
 import TransactionReducer from './transReducer'
 
 const initialTransactions = [
-    {amount: 500,  desc: "Cash"},
     {amount: -200, desc: "Book"},
-    {amount: -80, desc: "Pen"},
-    {amount: 250, desc: "Cash"}
+    {amount: 500,  desc: "Cash"}
+    
 ] 
 
 export const TransactionContext = createContext(initialTransactions);

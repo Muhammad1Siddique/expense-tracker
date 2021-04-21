@@ -7,10 +7,17 @@ const Front =() =>{
 
     const handleAddition = (event)=>{
         event.preventDefault();
+        if(Number(newAmount)===0){
+            window.alert("Zero is not allow");
+            return false;
+        }
         addTransaction({
-            amount: newAmount,
+            amount: Number(newAmount),
             desc: newDesc
         })
+        setDesc("");
+        setAmount(0);
+        
     }
     const grossIncome =() => {
         let income = 0;
@@ -72,10 +79,10 @@ const Front =() =>{
                 <h4 className="w3-border-bottom">Add New Transactions</h4>
                   <form onSubmit={handleAddition} >
                     <p><label>Description</label>
-                    <input className="w3-input w3-border" onChange={(ev)=>setDesc(ev.target.value)}  type="text" required/>
+                    <input className="w3-input w3-border" value={newDesc} onChange={(ev)=>setDesc(ev.target.value)}  type="text" placeholder="Description" required/>
                     </p>
                     <p><label>Amount<br/><small>negative for expense, positive for income</small></label>
-                    <input className="w3-input w3-border" onChange={(ev)=>setAmount(ev.target.value)}  type="number" required/></p>
+                    <input className="w3-input w3-border" value={newAmount} onChange={(ev)=>setAmount(ev.target.value)}  type="number" placeholder="0" required/></p>
                     <p>
                     <input className="w3-purple w3-button w3-border" name="submit" type="submit" value="Add Transaction"/></p>
                   </form>
