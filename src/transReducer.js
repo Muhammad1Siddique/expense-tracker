@@ -1,11 +1,11 @@
-Const TransactionsReducer =((state, action)=>{
+const TransactionReducer =  ((state, action)=>{
     switch(action.type){
-        case "add_transactions":{
+        case "add_transaction":{
             return[action.payload, ...state]
         }
         default: 
-            return state
+            return state;
     }
 })
 
-export default TransactionsReducer;
+export default TransactionReducer;

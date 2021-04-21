@@ -1,12 +1,13 @@
 import React from 'react';
 import './App.css';
 import Front from './front'
+import {TransactionProvider} from './transContext'
 
 function App() {
   return (
-    <div>
+    <TransactionProvider>
       <Front />
-    </div>
+    </TransactionProvider>
   );
 }
 
