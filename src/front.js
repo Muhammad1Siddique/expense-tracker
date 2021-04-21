@@ -1,11 +1,7 @@
-import React from 'react'
-
+import React, { useContext } from 'react'
+import {TransactionContext} from './transContext'
 const Front =() =>{
-    let transactions = [
-        {desc: "Cash",   amount: +500},
-        {desc: "Book",   amount: -200}, 
-        {desc: "Camera", amount: -100}
-    ]
+    let transactions = useContext(TransactionContext);
     return( 
         <div className="container w3-round">
             <h2 className="w3-center w3-padding-16"><strong>Expense Tracker</strong></h2>
