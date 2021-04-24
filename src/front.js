@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react'
 import {TransactionContext} from './transContext'
 const Front =() =>{
-    let {transactions, addTransaction} = useContext(TransactionContext);
+    let {transactions, addTransaction, deleteTransaction} = useContext(TransactionContext);
     let[newDesc, setDesc]=useState("");
     let[newAmount, setAmount]=useState(0);
 
@@ -15,6 +15,7 @@ const Front =() =>{
             amount: Number(newAmount),
             desc: newDesc
         })
+        
         setDesc("");
         setAmount(0);
         
@@ -67,12 +68,12 @@ const Front =() =>{
                          chec = false;
                     }
                     return(
-                        <div key={index} className={`w3-panel w3-rightbar w3-card-2 ${chec ? 'w3-border-green w3-pale-green':'w3-border-red w3-pale-red'}`}>
+                        <div key={index} className={`w3-panel w3-rightbar w3-card-2 ${chec ? 'w3-border-green w3-pale-green':'w3-border-red w3-pale-red'}`}>    
+                            <button className="delete-btn" onClick={()=>{deleteTransaction(index)}}>X</button>
                             <p><span>{transobj.desc}</span><span>${transobj.amount}</span></p>
                         </div>
                     )
                 })}
-                
                 
             </div>
             <div className="w3-container">

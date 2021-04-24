@@ -13,3 +13,16 @@
     display: flex;
     justify-content: space-between;
 }
+.delete-btn {
+    cursor: pointer;
+    background-color: #145649;
+    border: 0;
+    color: #fff;
+    font-size: 20px;
+    line-height: 20px;
+    padding: 2px 5px;
+    top: 50%;
+    float: right;
+    transform: translate(70%, -0%);
+    transition: opacity 0.3s ease;
+  }
