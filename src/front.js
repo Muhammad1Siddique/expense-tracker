@@ -53,7 +53,7 @@ const Front =() =>{
                         <h4 className="w3-center"><strong>INCOME</strong><br/><span className="w3-text-green">${grossIncome()}</span></h4>
                     </div>
                     <div className="w3-half">
-                        <h4 className="w3-center"><strong>EXPENSE</strong><br/><span className="w3-text-red">${totalExpense()}</span></h4>
+                        <h4 className="w3-center"><strong>EXPENSE</strong><br/><span className="w3-text-red">-${Math.abs(totalExpense())}</span></h4>
                     </div>
                 </div>
             </div>  
